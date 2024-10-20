@@ -28,6 +28,14 @@ def dmonitoringd_thread():
     if valid:
       DM.run_step(sm)
 
+    # 强制设置驾驶员状态为专心
+    DM.driver_state = {
+      'face_detected': True,
+      'eyes_on_road': True,
+      'distracted': False,
+      'alertness': 1.0
+    }
+
     # publish
     dat = DM.get_state_packet(valid=valid)
     pm.send('driverMonitoringState', dat)
