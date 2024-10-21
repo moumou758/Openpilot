@@ -26,7 +26,6 @@ def dmonitoringd_thread():
 
     valid = sm.all_checks()
     if valid:
-      DM.driver_attentive = True
       DM.run_step(sm)
 
     # publish
