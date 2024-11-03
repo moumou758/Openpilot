@@ -46,11 +46,6 @@ def dmonitoringd_thread():
      DM.wheel_on_right == (DM.wheelpos_learner.filtered_stat.M > DM.settings._WHEELPOS_THRESHOLD)):
       params.put_bool_nonblocking("IsRhdDetected", DM.wheel_on_right)
 
-    # Print awareness values
-    print("self.awareness = 1.")
-    print("self.awareness_active = 1.")
-    print("self.awareness_passive = 1.")
-
 def main():
   dmonitoringd_thread()
 
