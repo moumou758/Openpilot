@@ -595,8 +595,8 @@ EVENTS: dict[int, dict[str, Alert | AlertCallbackType]] = {
 
   EventName.manualLongitudinalRequired: {
     ET.WARNING: Alert(
-      "Smart/Adaptive Cruise Control is OFF",
-      "Manual Gas/Brakes Required",
+      "辅助驾驶已关闭",
+      "请接管车辆",
       AlertStatus.normal, AlertSize.mid,
       Priority.LOW, VisualAlert.none, AudibleAlert.none, 1.),
   },
@@ -808,17 +808,17 @@ EVENTS: dict[int, dict[str, Alert | AlertCallbackType]] = {
 
   EventName.wrongCruiseMode: {
     ET.USER_DISABLE: EngagementAlert(AudibleAlert.disengage),
-    ET.NO_ENTRY: NoEntryAlert("Adaptive Cruise Disabled"),
+    ET.NO_ENTRY: NoEntryAlert("自适应巡航已禁用"),
   },
 
   EventName.steerTempUnavailable: {
-    ET.SOFT_DISABLE: soft_disable_alert("Steering Temporarily Unavailable"),
-    ET.NO_ENTRY: NoEntryAlert("Steering Temporarily Unavailable"),
+    ET.SOFT_DISABLE: soft_disable_alert("自动转向不可用"),
+    ET.NO_ENTRY: NoEntryAlert("自动转向不可用"),
   },
 
   EventName.steerTimeLimit: {
-    ET.SOFT_DISABLE: soft_disable_alert("Vehicle Steering Time Limit"),
-    ET.NO_ENTRY: NoEntryAlert("Vehicle Steering Time Limit"),
+    ET.SOFT_DISABLE: soft_disable_alert("转向时间限制"),
+    ET.NO_ENTRY: NoEntryAlert("转向时间限制"),
   },
 
   EventName.outOfSpace: {
@@ -1130,8 +1130,8 @@ EVENTS: dict[int, dict[str, Alert | AlertCallbackType]] = {
   },
 
   EventName.lowSpeedLockout: {
-    ET.PERMANENT: NormalPermanentAlert("Cruise Fault: Restart the car to engage"),
-    ET.NO_ENTRY: NoEntryAlert("Cruise Fault: Restart the Car"),
+    ET.PERMANENT: NormalPermanentAlert("巡航故障: 请尝试重启车辆后启用"),
+    ET.NO_ENTRY: NoEntryAlert("巡航故障: 请尝试重启车辆"),
   },
 
   EventName.lkasDisabled: {
