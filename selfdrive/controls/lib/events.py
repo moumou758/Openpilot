@@ -1108,7 +1108,7 @@ EVENTS: dict[int, dict[str, Alert | AlertCallbackType]] = {
       "openpilot 已取消",
       "速度太慢",
       AlertStatus.normal, AlertSize.mid,
-      Priority.HIGH, VisualAlert.none, AudibleAlert.disengage, .2),
+      Priority.HIGH, VisualAlert.none, AudibleAlert.disengage, 3.),
   },
 
   # When the car is driving faster than most cars in the training data, the model outputs can be unpredictable.
