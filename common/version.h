@@ -1,1 +1,1 @@
-#define COMMA_VERSION "2025.01.14-630"
+#define COMMA_VERSION "630"
