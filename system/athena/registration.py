@@ -39,6 +39,8 @@ def register(show_spinner=False) -> str | None:
     with open(Paths.persist_root()+"/comma/dongle_id") as f:
       dongle_id = f.read().strip()
 
+  needs_registration = None in (IMEI, HardwareSerial, dongle_id)
+  return UNREGISTERED_DONGLE_ID
   pubkey = Path(Paths.persist_root()+"/comma/id_rsa.pub")
   if not pubkey.is_file():
     dongle_id = UNREGISTERED_DONGLE_ID
